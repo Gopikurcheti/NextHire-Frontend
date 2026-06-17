@@ -44,9 +44,7 @@ function MyJobs() {
 
         try {
 
-            await API.delete(
-                `/api/jobs/${id}`
-            );
+            await API.delete(`/jobs/${id}`);
 
             successAlert("Job Deleted Successfully");
 

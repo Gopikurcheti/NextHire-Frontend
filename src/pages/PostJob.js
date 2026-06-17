@@ -61,18 +61,27 @@ function PostJob() {
 
         catch (error) {
 
-    
+    console.log("========== ERROR ==========");
+
+    console.log("Message:", error.message);
+
+    console.log("Response:", error.response);
+
+    console.log("Request:", error.request);
+
+    console.log("Full Error:", error);
 
     if (error.response) {
-        console.log("Status:", error.response.status);
-        console.log("Data:", error.response.data);
-        errorAlert("Backend Error: " + error.response.status);
-    } else if (error.request) {
-        console.log("No Response:", error.request);
-        errorAlert("Cannot connect to Spring Boot");
+
+        errorAlert(
+            "Backend Error: " +
+            error.response.status
+        );
+
     } else {
-        console.log("Error:", error.message);
-        errorAlert(error.message);
+
+        errorAlert("Check Console");
+
     }
 
 }
