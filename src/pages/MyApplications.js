@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import API from "../services/api";
 import axios from "axios";
 
 function MyApplications() {

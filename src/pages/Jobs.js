@@ -13,17 +13,18 @@ function Jobs() {
 
     }, []);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
 
-        const timer = setTimeout(() => {
+    const timer = setTimeout(() => {
 
-            searchJobs();
+        searchJobs();
 
-        }, 400);
+    }, 400);
 
-        return () => clearTimeout(timer);
+    return () => clearTimeout(timer);
 
-    }, [keyword]);
+}, [keyword]);
 
     const loadJobs = async () => {
 

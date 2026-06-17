@@ -8,7 +8,8 @@ function Applicants() {
 
     const [apps, setApps] = useState([]);
 
-   useEffect(() => {
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+useEffect(() => {
 
     loadApplicants();
 
