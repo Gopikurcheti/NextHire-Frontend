@@ -23,7 +23,7 @@ function Applicants() {
                     `http://localhost:8080/api/applications/details/${jobId}`
                 );
 
-                console.log(result.data);
+              
 
             setApps(result.data);
 

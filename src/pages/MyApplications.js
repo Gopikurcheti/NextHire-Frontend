@@ -25,7 +25,7 @@ function MyApplications() {
                     `http://localhost:8080/api/applications/user/${userId}`
 
                 );
-            console.log(applications);
+            
 
             setApplications(result.data );
 

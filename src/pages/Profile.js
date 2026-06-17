@@ -9,7 +9,6 @@ function Profile() {
     const [stats, setStats] = useState({});
     const [user, setUser] = useState({});
     const [resume, setResume] = useState(null);
-    const [photo, setPhoto] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

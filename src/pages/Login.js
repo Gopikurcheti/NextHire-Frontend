@@ -45,7 +45,7 @@ function Login() {
 
             );
 
-            console.log("LOGIN RESPONSE:", res.data);
+            
 
             if (res.data.token) {
 

@@ -61,7 +61,7 @@ function PostJob() {
 
         catch (error) {
 
-    console.log("Complete Error:", error);
+    
 
     if (error.response) {
         console.log("Status:", error.response.status);
