@@ -36,3 +36,56 @@
     transform: rotate(360deg);
   }
 }
+
+
+.nexthire-alert {
+
+    border-radius: 20px !important;
+
+    background: #111 !important;
+
+    color: white !important;
+
+    border: 1px solid #6d28d9;
+
+    box-shadow: 0 0 20px rgba(109,40,217,0.4);
+}
+
+.nexthire-alert .swal2-title {
+
+    color: white !important;
+
+    font-size: 1.4rem !important;
+}
+
+.nexthire-alert .swal2-html-container {
+
+    color: #d1d5db !important;
+
+    font-size: 0.95rem !important;
+}
+
+@media (max-width: 768px) {
+
+    .nexthire-alert {
+
+        width: 85% !important;
+    }
+
+    .nexthire-alert .swal2-title {
+
+        font-size: 1.1rem !important;
+    }
+
+    .nexthire-alert .swal2-html-container {
+
+        font-size: 0.85rem !important;
+    }
+
+    .swal2-confirm {
+
+        font-size: 0.85rem !important;
+        padding: 8px 20px !important;
+    }
+
+}
