@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import API from "../services/api";
 import Loader from "../components/Loader";
 import { successAlert, errorAlert } from "../utils/alerts";
 
@@ -27,8 +27,8 @@ function Profile() {
                 sessionStorage.getItem("userId");
 
             const userResult =
-                await axios.get(
-                    `http://localhost:8080/api/users/${userId}`
+                await API.get(
+                    `/api/users/${userId}`
                 );
 
                 
@@ -41,16 +41,16 @@ function Profile() {
             ) {
 
                 statResult =
-                    await axios.get(
-                        `http://localhost:8080/api/applications/stats/${userId}`
+                    await API.get(
+                        `/api/applications/stats/${userId}`
                     );
 
             }
             else {
 
                 statResult =
-                    await axios.get(
-                        `http://localhost:8080/api/users/recruiter-stats/${userId}`
+                    await API.get(
+                        `/api/users/recruiter-stats/${userId}`
                     );
 
             }
@@ -97,9 +97,9 @@ function Profile() {
                 resume
             );
 
-            await axios.post(
+            await API.post(
 
-                `http://localhost:8080/api/users/upload-resume/${userId}`,
+                `/api/users/upload-resume/${userId}`,
 
                 formData
 
@@ -136,8 +136,8 @@ function Profile() {
             selectedPhoto
         );
 
-        await axios.post(
-            `http://localhost:8080/api/users/upload-photo/${user.userId}`,
+        await API.post(
+            `/api/users/upload-photo/${user.userId}`,
             formData
         );
 
@@ -175,16 +175,16 @@ if (loading) {
                 <div className="text-center">
 
     <img
-        src={
-            user.profilePhoto
-            ?
-            `http://localhost:8080/uploads/${user.profilePhoto}`
-            :
-            "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-        }
-        alt="profile"
-        className="profile-photo"
-    />
+    src={
+        user.profilePhoto
+        ?
+        `https://nexthire-backend-production-b9c8.up.railway.app/uploads/${user.profilePhoto}`
+        :
+        "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+    }
+    alt="profile"
+    className="profile-photo"
+/>
 
     <div className="mt-3">
 

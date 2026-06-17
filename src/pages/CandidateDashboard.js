@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import API from "../services/api";
 import candidateImage from "../assets/candidate.png";
 
 function CandidateDashboard() {
@@ -28,8 +28,8 @@ function CandidateDashboard() {
                 sessionStorage.getItem("userId");
 
             const result =
-                await axios.get(
-                    `http://localhost:8080/api/applications/stats/${userId}`
+                await API.get(
+                    `/applications/stats/${userId}`
                 );
 
             setStats(result.data);

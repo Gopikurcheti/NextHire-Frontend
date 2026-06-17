@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import API from "../services/api";
 
 function RecruiterProfile() {
 
@@ -13,8 +13,8 @@ function RecruiterProfile() {
 
     const loadProfile = async () => {
 
-        const result = await axios.get(
-            "http://localhost:8080/api/users/1"
+        const result = await API.get(
+            "/api/users/1"
         );
 
         setUser(result.data);

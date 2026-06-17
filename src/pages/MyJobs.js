@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import API from "../services/api";
 import { Link } from "react-router-dom";
 import { successAlert, errorAlert } from "../utils/alerts";
 
@@ -17,8 +17,8 @@ function MyJobs() {
 
         try {
 
-            const result = await axios.get(
-                "http://localhost:8080/api/jobs"
+            const result = await API.get(
+                "/api/jobs"
             );
 
             setJobs(result.data);
@@ -44,8 +44,8 @@ function MyJobs() {
 
         try {
 
-            await axios.delete(
-                `http://localhost:8080/api/jobs/${id}`
+            await API.delete(
+                `/api/jobs/${id}`
             );
 
             successAlert("Job Deleted Successfully");

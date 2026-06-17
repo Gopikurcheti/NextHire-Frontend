@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "../styles/Home.css";
 import homeImage from "../assets/home-hero.png";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import API from "../services/api";
 
 
 
@@ -29,8 +29,8 @@ function Home() {
         try {
     
             const result =
-                await axios.get(
-                    "http://localhost:8080/api/home/stats"
+                await API.get(
+                    "/home/stats"
                 );
     
             setStats(result.data);

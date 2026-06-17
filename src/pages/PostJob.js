@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import API from "../services/api";
 import { successAlert, errorAlert } from "../utils/alerts";
 
 function PostJob() {
@@ -31,9 +31,9 @@ function PostJob() {
 
         try {
 
-            await axios.post(
+            await API.post(
 
-             "http://localhost:8080/api/jobs",
+             "/api/jobs",
 
              job
 

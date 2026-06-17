@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import API from "../services/api";
 
 function MyApplications() {
 
@@ -19,9 +19,9 @@ function MyApplications() {
                 );
 
             const result =
-                await axios.get(
+                await API.get(
 
-                    `http://localhost:8080/api/applications/user/${userId}`
+                    `/api/applications/user/${userId}`
 
                 );
             

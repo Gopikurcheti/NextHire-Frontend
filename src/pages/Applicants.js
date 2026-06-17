@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import API from "../services/api";
 import { useParams } from "react-router-dom";
 import { successAlert } from "../utils/alerts";
 function Applicants() {
@@ -15,8 +15,8 @@ function Applicants() {
         try {
 
             const result =
-                await axios.get(
-                    `http://localhost:8080/api/applications/details/${jobId}`
+                await API.get(
+                    `/applications/details/${jobId}`
                 );
 
             setApps(result.data);
@@ -39,8 +39,8 @@ function Applicants() {
         try {
 
             const result =
-                await axios.get(
-                    `http://localhost:8080/api/applications/details/${jobId}`
+                await API.get(
+                    `/applications/details/${jobId}`
                 );
 
               
@@ -65,8 +65,8 @@ function Applicants() {
 
         try {
 
-            await axios.put(
-                `http://localhost:8080/api/applications/${id}/${status}`
+            await API.put(
+                `/applications/${id}/${status}`
             );
 
             successAlert("Status Updated");
@@ -134,12 +134,12 @@ function Applicants() {
                             </p>
 
                             <a
-                                    href={`http://localhost:8080/uploads/${app.resumeUrl}`}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="btn btn-info mb-2"
+                                 href={`https://nexthire-backend-production-b9c8.up.railway.app/uploads/${app.resumeUrl}`}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="btn btn-info mb-2"
                             >
-                                📄 View Resume
+                                  📄 View Resume
                             </a>
 
                             <p>
