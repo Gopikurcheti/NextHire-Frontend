@@ -97,13 +97,10 @@ function Profile() {
                 resume
             );
 
-            await API.post(
-
-                `/api/users/upload-resume/${userId}`,
-
-                formData
-
-            );
+           await API.post(
+             `/users/upload-resume/${userId}`,
+             formData
+           );
 
             successAlert(
                 "Resume Uploaded Successfully"
@@ -136,10 +133,10 @@ function Profile() {
             selectedPhoto
         );
 
-        await API.post(
-            `/api/users/upload-photo/${user.userId}`,
-            formData
-        );
+       await API.post(
+    `/users/upload-photo/${user.userId}`,
+    formData
+);
 
         successAlert(
             "Photo Uploaded Successfully"

@@ -27,66 +27,44 @@ function PostJob() {
 
     };
 
-    const postJob = async () => {
+   const postJob = async () => {
 
-        try {
+    if (
+        !job.title.trim() ||
+        !job.companyName.trim() ||
+        !job.location.trim() ||
+        !job.salary.trim() ||
+        !job.skills.trim() ||
+        !job.description.trim()
+    ) {
 
-            await API.post(
+        errorAlert("Please fill all fields");
 
-             "/jobs",
+        return;
+    }
 
-             job
+    try {
 
-                        );
+        await API.post("/jobs", job);
 
-            successAlert("Job Posted Successfully");
+        successAlert("Job Posted Successfully");
 
-            setJob({
+        setJob({
+            title: "",
+            companyName: "",
+            location: "",
+            salary: "",
+            skills: "",
+            description: ""
+        });
 
-                title: "",
+    } catch (error) {
 
-                companyName: "",
-
-                location: "",
-
-                salary: "",
-
-                skills: "",
-
-                description: ""
-
-            });
-
-        }
-
-        catch (error) {
-
-    console.log("========== ERROR ==========");
-
-    console.log("Message:", error.message);
-
-    console.log("Response:", error.response);
-
-    console.log("Request:", error.request);
-
-    console.log("Full Error:", error);
-
-    if (error.response) {
-
-        errorAlert(
-            "Backend Error: " +
-            error.response.status
-        );
-
-    } else {
-
-        errorAlert("Check Console");
+        console.log(error);
 
     }
 
-}
-
-    };
+};
 
     return (
 

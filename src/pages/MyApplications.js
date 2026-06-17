@@ -21,7 +21,7 @@ function MyApplications() {
             const result =
                 await API.get(
 
-                    `/api/applications/user/${userId}`
+                    `/applications/user/${userId}`
 
                 );
             
