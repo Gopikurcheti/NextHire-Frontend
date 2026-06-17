@@ -13,12 +13,34 @@ function Jobs() {
 
     }, []);
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    useEffect(() => {
+   useEffect(() => {
 
-    const timer = setTimeout(() => {
+    const timer = setTimeout(async () => {
 
-        searchJobs();
+        try {
+
+            if (keyword.trim() === "") {
+
+                const response = await API.get("/jobs");
+                setJobs(response.data);
+
+            }
+            else {
+
+                const response = await API.get(
+                    `/jobs/search?keyword=${keyword}`
+                );
+
+                setJobs(response.data);
+
+            }
+
+        }
+        catch (error) {
+
+            console.log(error);
+
+        }
 
     }, 400);
 
