@@ -33,7 +33,7 @@ function PostJob() {
 
             await API.post(
 
-             "/api/jobs",
+             "/jobs",
 
              job
 
