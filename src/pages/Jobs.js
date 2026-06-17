@@ -69,32 +69,32 @@ function Jobs() {
 
     };
 
-    const searchJobs = async () => {
+    // const searchJobs = async () => {
 
-        try {
+    //     try {
 
-            if (keyword.trim() === "") {
+    //         if (keyword.trim() === "") {
 
-                loadJobs();
-                return;
+    //             loadJobs();
+    //             return;
 
-            }
+    //         }
 
-            const response =
-                await API.get(
-                    `/jobs/search?keyword=${keyword}`
-                );
+    //         const response =
+    //             await API.get(
+    //                 `/jobs/search?keyword=${keyword}`
+    //             );
 
-            setJobs(response.data);
+    //         setJobs(response.data);
 
-        }
-        catch (error) {
+    //     }
+    //     catch (error) {
 
-            console.log(error);
+    //         console.log(error);
 
-        }
+    //     }
 
-    };
+    // };
 
     const applyJob = async (jobId) => {
 
