@@ -8,10 +8,29 @@ function Applicants() {
 
     const [apps, setApps] = useState([]);
 
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-useEffect(() => {
+  useEffect(() => {
 
-    loadApplicants();
+    const fetchApplicants = async () => {
+
+        try {
+
+            const result =
+                await axios.get(
+                    `http://localhost:8080/api/applications/details/${jobId}`
+                );
+
+            setApps(result.data);
+
+        }
+        catch (error) {
+
+            console.log(error);
+
+        }
+
+    };
+
+    fetchApplicants();
 
 }, [jobId]);
 
