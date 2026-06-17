@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "http://localhost:8080/api"
+    baseURL: "https://nexthire-backend-production-b9c8.up.railway.app/api"
 });
 
 API.interceptors.request.use((config) => {
