@@ -1,6 +1,6 @@
 import { useEffect , useState } from "react";
 import { FaEnvelope, FaLock } from "react-icons/fa";
-import axios from "axios";
+import API from "../services/api";
 import { useNavigate } from "react-router-dom";
 import {errorAlert} from "../utils/alerts";
 function Login() {
@@ -37,12 +37,9 @@ function Login() {
 
         try {
 
-            const res = await axios.post(
-
-                "http://localhost:8080/api/auth/login",
-
+            const res = await API.post(
+                "/auth/login",
                 login
-
             );
 
             

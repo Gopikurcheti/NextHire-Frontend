@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaUser, FaEnvelope, FaLock, FaUsers } from "react-icons/fa";
-import axios from "axios";
 import { successAlert, errorAlert } from "../utils/alerts";
+import API from "../services/api";
 
 function Register() {
 
@@ -43,9 +43,9 @@ function Register() {
 
         try {
 
-            const res = await axios.post(
+            const res = await API.post(
 
-                "http://localhost:8080/api/auth/register",
+                "/auth/register",
 
                 user
 
