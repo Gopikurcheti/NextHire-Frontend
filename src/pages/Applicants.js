@@ -8,11 +8,11 @@ function Applicants() {
 
     const [apps, setApps] = useState([]);
 
-    useEffect(() => {
+   useEffect(() => {
 
-        loadApplicants();
+    loadApplicants();
 
-    }, []);
+}, [jobId]);
 
     const loadApplicants = async () => {
 
@@ -35,6 +35,8 @@ function Applicants() {
         }
 
     };
+
+
 
     const updateStatus = async (
         id,
