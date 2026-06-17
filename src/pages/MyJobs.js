@@ -18,7 +18,7 @@ function MyJobs() {
         try {
 
             const result = await API.get(
-                "/api/jobs"
+                "/jobs"
             );
 
             setJobs(result.data);

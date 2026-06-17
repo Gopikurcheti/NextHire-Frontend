@@ -28,7 +28,7 @@ function Profile() {
 
             const userResult =
                 await API.get(
-                    `/api/users/${userId}`
+                    `/users/${userId}`
                 );
 
                 
@@ -42,7 +42,7 @@ function Profile() {
 
                 statResult =
                     await API.get(
-                        `/api/applications/stats/${userId}`
+                        `/applications/stats/${userId}`
                     );
 
             }
@@ -50,7 +50,7 @@ function Profile() {
 
                 statResult =
                     await API.get(
-                        `/api/users/recruiter-stats/${userId}`
+                        `/users/recruiter-stats/${userId}`
                     );
 
             }

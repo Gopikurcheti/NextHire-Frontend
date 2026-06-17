@@ -14,7 +14,7 @@ function RecruiterProfile() {
     const loadProfile = async () => {
 
         const result = await API.get(
-            "/api/users/1"
+            "/users/1"
         );
 
         setUser(result.data);
