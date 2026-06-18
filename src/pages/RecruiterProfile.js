@@ -11,15 +11,28 @@ function RecruiterProfile() {
 
     }, []);
 
-    const loadProfile = async () => {
+   const loadProfile = async () => {
 
-        const result = await API.get(
-            "/users/1"
-        );
+    try {
+
+        const userId =
+            sessionStorage.getItem("userId");
+
+        const result =
+            await API.get(
+                `/users/${userId}`
+            );
 
         setUser(result.data);
 
-    };
+    }
+    catch(error){
+
+        console.log(error);
+
+    }
+
+};
 
     
 

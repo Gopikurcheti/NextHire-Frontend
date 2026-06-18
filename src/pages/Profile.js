@@ -112,13 +112,17 @@ function Profile() {
         }
         catch (error) {
 
-            console.log(error);
+    console.log("FULL ERROR:", error);
 
-            errorAlert(
-                "Resume Upload Failed"
-            );
+    console.log("RESPONSE:", error.response);
 
-        }
+    console.log("DATA:", error.response?.data);
+
+    errorAlert(
+        "Resume Upload Failed"
+    );
+
+}
 
     };
 
@@ -147,13 +151,17 @@ function Profile() {
     }
     catch(error){
 
-        console.log(error);
+    console.log("FULL ERROR:", error);
 
-        errorAlert(
-            "Photo Upload Failed"
-        );
+    console.log("RESPONSE:", error.response);
 
-    }
+    console.log("DATA:", error.response?.data);
+
+    errorAlert(
+        "Photo Upload Failed"
+    );
+
+}
 
 };
 
