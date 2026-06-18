@@ -365,14 +365,14 @@ if (loading) {
 
             </p>
 
-            <a
-    href={user.resumeUrl}
-    target="_blank"
-    rel="noreferrer"
-    className="btn btn-success"
->
-    View Resume
-</a>
+           <a
+                href={`https://nexthire-backend-production-b9c8.up.railway.app/uploads/${user.resumeUrl}`}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-success"
+            >
+                View Resume
+            </a>
 
         </div>
 
